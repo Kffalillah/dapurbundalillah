@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dapur Bundalillah - Kelezatan Masakan Rumah khas Ambon</title>
+    <!-- FontAwesome Icons CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
-        /* --- RESET & COLOR PALETTE (ROYAL BLUE & GOLD) --- */
         * {
             margin: 0;
             padding: 0;
@@ -34,7 +36,6 @@
             line-height: 1.6;
         }
 
-        /* --- NAVBAR --- */
         header {
             background-color: var(--primary-blue);
             color: var(--white);
@@ -51,7 +52,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
+            padding: 0.85rem 1.5rem;
         }
 
         .logo {
@@ -62,44 +63,82 @@
             color: var(--white);
         }
 
-        .logo i {
-            font-size: 2rem;
-            color: var(--gold);
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            background: var(--gold);
+            color: var(--primary-blue);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(250, 204, 21, 0.3);
         }
 
         .logo-text h1 {
-            font-size: 1.5rem;
-            font-weight: 700;
+            font-size: 1.35rem;
+            font-weight: 800;
             color: var(--gold);
             line-height: 1.1;
+            letter-spacing: 0.5px;
         }
 
         .logo-text span {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: #cbd5e1;
             letter-spacing: 1px;
+            font-weight: 600;
+            display: block;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 1rem;
+            gap: 0.4rem;
             align-items: center;
         }
 
         nav a {
             color: var(--white);
             text-decoration: none;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 500;
-            transition: all 0.3s ease;
+            transition: all 0.25s ease;
             padding: 6px 10px;
-            border-radius: 6px;
+            border-radius: 8px;
         }
 
         nav a:hover {
             color: var(--gold);
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-admin {
+            background-color: var(--dark-blue);
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            padding: 7px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-admin:hover {
+            background-color: var(--gold);
+            color: var(--primary-blue);
         }
 
         .nav-cart-btn {
@@ -107,54 +146,76 @@
             color: var(--primary-blue);
             padding: 8px 18px;
             border-radius: 20px;
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 0.85rem;
             display: flex;
             align-items: center;
             gap: 8px;
             cursor: pointer;
             border: none;
             transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
 
         .nav-cart-btn:hover {
             background-color: var(--gold-hover);
-            transform: scale(1.05);
+            transform: scale(1.03);
         }
 
         .cart-badge {
             background-color: #ef4444;
             color: white;
             font-size: 0.75rem;
-            width: 20px;
+            min-width: 20px;
             height: 20px;
-            border-radius: 50%;
+            padding: 0 5px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-weight: bold;
         }
 
-        /* --- HERO SECTION --- */
         .hero {
-            background: linear-gradient(135deg, rgba(15, 44, 89, 0.92), rgba(11, 30, 62, 0.95)), url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1400&q=80');
+            background: linear-gradient(135deg, rgba(15, 44, 89, 0.92), rgba(11, 30, 62, 0.96)), url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1400&q=80');
             background-size: cover;
             background-position: center;
             color: var(--white);
             text-align: center;
-            padding: 100px 20px 120px 20px;
+            padding: 90px 20px 110px 20px;
+            position: relative;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(250, 204, 21, 0.15);
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
         }
 
         .hero h2 {
-            font-size: 3rem;
-            color: var(--gold);
+            font-size: 2.8rem;
+            color: var(--white);
             margin-bottom: 15px;
-            font-weight: 700;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .hero h2 span {
+            color: var(--gold);
         }
 
         .hero p {
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             max-width: 750px;
             margin: 0 auto 30px auto;
-            color: #e2e8f0;
+            color: #cbd5e1;
         }
 
         .hero-btns {
@@ -167,7 +228,7 @@
         .btn-gold {
             background-color: var(--gold);
             color: var(--primary-blue);
-            padding: 12px 30px;
+            padding: 12px 28px;
             border-radius: 30px;
             text-decoration: none;
             font-weight: 700;
@@ -177,22 +238,28 @@
             transition: all 0.3s;
             border: none;
             cursor: pointer;
+            box-shadow: 0 4px 15px rgba(250, 204, 21, 0.3);
+            font-size: 0.9rem;
         }
 
         .btn-gold:hover {
             background-color: var(--gold-hover);
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(250, 204, 21, 0.3);
+            box-shadow: 0 8px 20px rgba(250, 204, 21, 0.4);
         }
 
         .btn-outline {
             border: 2px solid var(--gold);
             color: var(--gold);
-            padding: 12px 30px;
+            padding: 12px 28px;
             border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
+            font-size: 0.9rem;
             transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .btn-outline:hover {
@@ -200,23 +267,22 @@
             color: var(--primary-blue);
         }
 
-        /* --- CONTAINER & TITLES --- */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 70px 20px;
+            padding: 60px 20px;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 45px;
         }
 
         .section-header h2 {
-            font-size: 2.2rem;
+            font-size: 2.1rem;
             color: var(--primary-blue);
-            font-weight: 700;
-            margin-bottom: 10px;
+            font-weight: 800;
+            margin-bottom: 8px;
             position: relative;
             display: inline-block;
         }
@@ -235,11 +301,10 @@
 
         .section-header p {
             color: var(--text-muted);
-            font-size: 1rem;
+            font-size: 0.95rem;
             margin-top: 15px;
         }
 
-        /* --- TENTANG KAMI --- */
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -256,7 +321,7 @@
             position: relative;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
         }
 
         .about-image img {
@@ -275,36 +340,30 @@
             padding: 10px 20px;
             border-radius: 10px;
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            border: 1px solid var(--gold);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
 
         .about-content h3 {
             font-size: 1.8rem;
             color: var(--primary-blue);
             margin-bottom: 15px;
+            font-weight: 700;
         }
 
         .founder-box {
             background-color: #f1f5f9;
             border-left: 4px solid var(--gold);
-            padding: 15px 20px;
+            padding: 16px 20px;
             margin: 20px 0;
-            border-radius: 0 10px 10px 0;
+            border-radius: 0 12px 12px 0;
         }
 
         .founder-box h4 {
             color: var(--primary-blue);
-            font-size: 1.1rem;
-        }
-
-        /* --- MASAKAN KAMI (GALERI) --- */
-        .dish-gallery-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-            gap: 15px;
+            font-size: 1.05rem;
+            font-weight: 700;
         }
 
         .gallery-grid {
@@ -315,30 +374,33 @@
 
         .gallery-card {
             background: var(--white);
-            border-radius: 15px;
+            border-radius: 16px;
             overflow: hidden;
             box-shadow: var(--shadow);
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #e2e8f0;
         }
 
         .gallery-card:hover {
             transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(15, 44, 89, 0.15);
         }
 
         .gallery-img-container {
             height: 220px;
             overflow: hidden;
+            position: relative;
         }
 
         .gallery-img-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s;
+            transition: transform 0.5s ease;
         }
 
         .gallery-card:hover .gallery-img-container img {
-            transform: scale(1.1);
+            transform: scale(1.08);
         }
 
         .gallery-info {
@@ -349,6 +411,7 @@
             font-size: 1.1rem;
             color: var(--primary-blue);
             margin-bottom: 5px;
+            font-weight: 700;
         }
 
         .gallery-info p {
@@ -356,7 +419,6 @@
             font-size: 0.85rem;
         }
 
-        /* --- MENU REGULER & PAKETAN --- */
         .menu-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -377,6 +439,7 @@
         .menu-card:hover {
             border-color: var(--gold);
             transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(15, 44, 89, 0.12);
         }
 
         .menu-img {
@@ -395,16 +458,17 @@
         .menu-tag {
             background-color: #dbeafe;
             color: var(--primary-blue);
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             font-weight: 700;
             padding: 4px 10px;
             border-radius: 20px;
             align-self: flex-start;
             margin-bottom: 10px;
+            text-transform: uppercase;
         }
 
         .menu-title {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             font-weight: 700;
             color: var(--primary-blue);
             margin-bottom: 8px;
@@ -427,7 +491,7 @@
 
         .menu-price {
             font-size: 1.2rem;
-            font-weight: 700;
+            font-weight: 800;
             color: var(--primary-blue);
         }
 
@@ -436,8 +500,9 @@
             color: var(--gold);
             border: none;
             padding: 8px 16px;
-            border-radius: 8px;
-            font-weight: 600;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 0.8rem;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -450,58 +515,64 @@
             color: var(--primary-blue);
         }
 
-        /* --- CUSTOM MENU REGULER --- */
         .custom-menu-card {
             background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
             color: var(--white);
             border-radius: 20px;
-            padding: 40px;
+            padding: 35px;
             box-shadow: var(--shadow);
             border-left: 8px solid var(--gold);
         }
 
         .custom-menu-card h3 {
             color: var(--gold);
-            font-size: 1.8rem;
-            margin-bottom: 10px;
+            font-size: 1.6rem;
+            margin-bottom: 8px;
+            font-weight: 800;
         }
 
         .custom-form-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 18px;
             margin-top: 20px;
         }
 
         .custom-form-grid textarea {
             grid-column: span 2;
-            min-height: 100px;
+            min-height: 90px;
         }
 
         .input-dark {
             width: 100%;
             padding: 12px;
-            border-radius: 8px;
+            border-radius: 10px;
             border: 1px solid rgba(255, 255, 255, 0.2);
             background-color: rgba(255, 255, 255, 0.08);
             color: white;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
+            outline: none;
+        }
+
+        .input-dark:focus {
+            border-color: var(--gold);
+            background-color: rgba(255, 255, 255, 0.12);
         }
 
         .input-dark::placeholder {
             color: #94a3b8;
         }
 
-        /* --- TUMPENG CUSTOM SECTION --- */
         .tumpeng-custom-box {
             background: var(--white);
             border-radius: 20px;
-            padding: 40px;
+            padding: 35px;
             box-shadow: var(--shadow);
             border: 2px solid var(--gold);
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            gap: 35px;
+            align-items: center;
         }
 
         .tumpeng-preview {
@@ -513,28 +584,34 @@
             max-height: 380px;
             object-fit: cover;
             border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
         }
 
         .tumpeng-form .form-group {
-            margin-bottom: 18px;
+            margin-bottom: 16px;
         }
 
         .tumpeng-form label {
             display: block;
-            font-weight: 600;
+            font-weight: 700;
             color: var(--primary-blue);
             margin-bottom: 6px;
-            font-size: 0.95rem;
+            font-size: 0.88rem;
         }
 
         .tumpeng-form select, .tumpeng-form input, .tumpeng-form textarea {
             width: 100%;
-            padding: 12px;
+            padding: 11px 14px;
             border: 1px solid #cbd5e1;
-            border-radius: 8px;
-            font-size: 0.95rem;
+            border-radius: 10px;
+            font-size: 0.9rem;
             background-color: var(--bg-light);
+            outline: none;
+        }
+
+        .tumpeng-form select:focus, .tumpeng-form input:focus, .tumpeng-form textarea:focus {
+            border-color: var(--primary-blue);
+            background-color: white;
         }
 
         .checkbox-group {
@@ -542,18 +619,26 @@
             grid-template-columns: 1fr 1fr;
             gap: 10px;
             background: var(--bg-light);
-            padding: 12px;
-            border-radius: 8px;
+            padding: 14px;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
         }
 
         .checkbox-item {
             display: flex;
             align-items: center;
             gap: 8px;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
+            cursor: pointer;
+            color: var(--text-dark);
         }
 
-        /* --- CONTACT & LOCATION --- */
+        .checkbox-item input {
+            accent-color: var(--primary-blue);
+            width: 16px;
+            height: 16px;
+        }
+
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -567,45 +652,47 @@
         .contact-info-list {
             display: flex;
             flex-direction: column;
-            gap: 25px;
+            gap: 22px;
         }
 
         .contact-item {
             display: flex;
             align-items: flex-start;
-            gap: 18px;
-            transition: transform 0.2s ease;
-        }
-
-        .contact-item:hover {
-            transform: translateX(5px);
+            gap: 16px;
         }
 
         .contact-icon {
             background-color: var(--primary-blue);
             color: var(--gold);
-            width: 50px;
-            height: 50px;
+            width: 48px;
+            height: 48px;
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(15, 44, 89, 0.2);
         }
 
         .contact-text h4 {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: var(--primary-blue);
             margin-bottom: 2px;
+            font-weight: 700;
         }
 
-        .contact-text p {
+        .contact-text p, .contact-text a {
             color: var(--text-muted);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
+            text-decoration: none;
         }
 
-        /* --- MODAL SHOPPING CART --- */
+        .contact-text a:hover {
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+
         .cart-modal {
             position: fixed;
             top: 0;
@@ -628,7 +715,7 @@
         .cart-header {
             background-color: var(--primary-blue);
             color: var(--white);
-            padding: 20px;
+            padding: 18px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -637,14 +724,18 @@
 
         .cart-header h3 {
             color: var(--gold);
-            font-size: 1.2rem;
+            font-size: 1.15rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .close-cart {
             background: none;
             border: none;
             color: white;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             cursor: pointer;
         }
 
@@ -664,12 +755,13 @@
 
         .cart-item-info h5 {
             color: var(--primary-blue);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
+            font-weight: 700;
         }
 
         .cart-item-info p {
             color: var(--text-muted);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
         }
 
         .cart-item-qty {
@@ -683,9 +775,37 @@
             border: none;
             width: 26px;
             height: 26px;
-            border-radius: 4px;
+            border-radius: 6px;
             font-weight: 700;
             cursor: pointer;
+            color: var(--primary-blue);
+        }
+
+        .cart-qty-input {
+            width: 65px;
+            padding: 3px 4px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--primary-blue);
+            outline: none;
+            -moz-appearance: textfield;
+        }
+
+        .cart-qty-input:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 2px rgba(250, 204, 21, 0.25);
+        }
+
+        .btn-remove-item {
+            background: none;
+            border: none;
+            color: #ef4444;
+            cursor: pointer;
+            margin-left: 8px;
+            font-size: 0.85rem;
         }
 
         .cart-footer {
@@ -697,8 +817,8 @@
         .cart-total {
             display: flex;
             justify-content: space-between;
-            font-size: 1.2rem;
-            font-weight: 700;
+            font-size: 1.15rem;
+            font-weight: 800;
             color: var(--primary-blue);
             margin-bottom: 15px;
         }
@@ -709,8 +829,8 @@
             color: white;
             border: none;
             padding: 14px;
-            border-radius: 10px;
-            font-size: 1rem;
+            border-radius: 12px;
+            font-size: 0.95rem;
             font-weight: 700;
             cursor: pointer;
             display: flex;
@@ -718,6 +838,7 @@
             justify-content: center;
             gap: 10px;
             transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
         }
 
         .btn-checkout-wa:hover {
@@ -731,6 +852,7 @@
             width: 100%;
             height: 100%;
             background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(2px);
             z-index: 1500;
             display: none;
         }
@@ -739,16 +861,67 @@
             display: block;
         }
 
-        /* --- FOOTER --- */
+        .modal-box {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            z-index: 2100;
+            width: 90%;
+            max-width: 500px;
+            display: none;
+            border: 3px solid var(--gold);
+        }
+
+        .modal-box.active {
+            display: block;
+        }
+
+        .toast-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 3000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            pointer-events: none;
+        }
+
+        .toast {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            border-left: 4px solid var(--gold);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         footer {
             background-color: var(--dark-blue);
             color: #94a3b8;
-            padding: 40px 20px 20px 20px;
+            padding: 35px 20px 20px 20px;
             text-align: center;
             border-top: 4px solid var(--gold);
+            font-size: 0.85rem;
         }
 
-        /* --- RESPONSIVE --- */
+        /* Responsive Breakpoints */
         @media (max-width: 992px) {
             .about-grid, .tumpeng-custom-box, .contact-grid, .custom-form-grid {
                 grid-template-columns: 1fr;
@@ -758,7 +931,7 @@
             }
             .nav-container {
                 flex-direction: column;
-                gap: 15px;
+                gap: 12px;
             }
             nav ul {
                 flex-wrap: wrap;
@@ -769,21 +942,23 @@
 </head>
 <body>
 
-    <div class="overlay" id="overlay" onclick="closeCart()"></div>
+    <div class="overlay" id="overlay" onclick="closeCart(); closeAdminModal();"></div>
 
     <header>
         <div class="nav-container">
             <a href="#home" class="logo">
-                <i class="fa-solid fa-utensils"></i>
+                <div class="logo-icon">
+                    <i class="fa-solid fa-utensils"></i>
+                </div>
                 <div class="logo-text">
                     <h1>Dapur Bundalillah</h1>
-                    <span>KULINER NUSANTARA & AMBON</span>
+                    <span>MASAKAN RUMAH KHAS AMBON</span>
                 </div>
             </a>
             <nav>
                 <ul>
                     <li><a href="#home">Beranda</a></li>
-                    <li><a href="#tentang">Tentang </a></li>
+                    <li><a href="#tentang">Tentang</a></li>
                     <li><a href="#masakan">Masakan Kami</a></li>
                     <li><a href="#menu-reguler">Menu Reguler</a></li>
                     <li><a href="#custom-menu">Custom Reguler</a></li>
@@ -793,16 +968,22 @@
                     <li><a href="#kontak">Kontak</a></li>
                 </ul>
             </nav>
-            <button class="nav-cart-btn" onclick="openCart()">
-                <i class="fa-solid fa-cart-shopping"></i>
-                <span>Keranjang</span>
-                <span class="cart-badge" id="cartBadge">0</span>
-            </button>
+            <div class="nav-actions">
+                <button class="btn-admin" onclick="openAdminModal()">
+                    <i class="fa-solid fa-plus-circle"></i> Tambah Menu
+                </button>
+                <button class="nav-cart-btn" onclick="openCart()">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>Keranjang</span>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </button>
+            </div>
         </div>
     </header>
 
     <section class="hero" id="home">
-        <h2>Dapur Bundalillah</h2>
+        <span class="hero-badge"><i class="fa-solid fa-award"></i> Catering & Kuliner Masakan Rumah</span>
+        <h2>Cita Rasa Autentik <br><span>Dapur Bundalillah</span></h2>
         <p>Sajian Kuliner Otentik, Halal, & Higienis dengan Sentuhan Kasih Sayang Masakan Rumah Bunda di Kota Ambon.</p>
         <div class="hero-btns">
             <a href="#menu-reguler" class="btn-gold"><i class="fa-solid fa-box"></i> Menu Reguler (Nasi Kotak)</a>
@@ -817,8 +998,9 @@
         </div>
         <div class="about-grid">
             <div class="about-image">
-                <img src="Foto Founder dan Manager Dapur Bundalillah.jpg" alt="Dapur Bundalillah Activity">
-                <div class="about-badge"><i class="fa-solid fa-certificate"></i> Founder and Manager Dapur Bundalillah</div>
+                <!-- Primary photo file specified by user with online fallback -->
+                <img src="Foto Founder dan Manager Dapur Bundalillah.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80';" alt="Founder dan Manager Dapur Bundalillah">
+                <div class="about-badge"><i class="fa-solid fa-certificate"></i> Founder & Manager Dapur Bundalillah</div>
             </div>
             <div class="about-content">
                 <h3>Kelezatan Berawal dari Dapur Rumah</h3>
@@ -826,61 +1008,60 @@
                 
                 <div class="founder-box">
                     <h4><i class="fa-solid fa-user-check"></i> Founder Dapur Bundalillah - Bunda Lillah</h4>
-                    <p style="font-size:0.9rem; margin-top:5px; color:#475569;">
+                    <p style="font-size:0.88rem; margin-top:6px; color:#475569; font-style: italic;">
                         "Bagi kami, memasak bukan sekadar meracik bahan, tapi menghidangkan kasih sayang. Setiap suapan nasi kotak, tumpeng, hingga prasmanan dibuat dengan resep rahasia bumbu melimpah khas Bunda Lillah."
                     </p>
                 </div>
 
                 <p style="font-size:0.9rem; color:var(--text-muted);">
-                    Kami melayani pesanan harian nasi kotak reguler, acara syukuran, tumpeng custom, hingga konsumsi acara prasmanan kantor dan pernikahan.
+                    Kami melayani pesanan harian nasi kotak reguler, acara syukuran, tumpeng custom, hingga konsumsi acara prasmanan kantor dan pernikahan di wilayah Waiheru dan seluruh Kota Ambon.
                 </p>
             </div>
         </div>
     </section>
 
     <section class="container" id="masakan">
-        <div class="dish-gallery-header">
-            <div>
-                <h2 style="color:var(--primary-blue); font-size:2rem; font-weight:700;">Masakan Kami</h2>
-                <p style="color:var(--text-muted);">Galeri Olahan Masakan & Dokumentasi Hidangan Dapur Bundalillah</p>
-            </div>
+        <div class="section-header">
+            <h2>Masakan Kami</h2>
+            <p>Galeri Olahan Masakan & Dokumentasi Hidangan Dapur Bundalillah</p>
         </div>
 
         <div class="gallery-grid" id="galleryContainer">
             <div class="gallery-card">
                 <div class="gallery-img-container">
-                    <img src="Tumbes.jpg" alt="Tumpeng Premium">
+                    <!-- Photo 1 specified by user with fallback -->
+                    <img src="Tumbes.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=600&q=80';" alt="Tumpeng Premium">
                 </div>
                 <div class="gallery-info">
-                    <h4>Tumpeng Premium</h4>
-                    <p>Tumpeng dibuat dengan bahan-bahan pilihan dan bumbu nya meresap asli pada masakan.</p>
+                    <h4>Tumpeng Premium Tampah</h4>
+                    <p>Tumpeng dibuat dengan bahan-bahan pilihan dan bumbunya meresap asli pada masakan.</p>
                 </div>
             </div>
             <div class="gallery-card">
                 <div class="gallery-img-container">
-                    <img src="https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=500&q=80" alt="Ikan Bakar khas Ambon">
+                    <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=600&q=80" alt="Ikan Bakar khas Ambon">
                 </div>
                 <div class="gallery-info">
                     <h4>Ikan Bakar Sambal Colok-Colok</h4>
-                    <p>Ikan segar lokal dipanggang khas dengan sambal colok-colok Ambon.</p>
+                    <p>Ikan segar lokal dipanggang khas dengan siraman sambal colok-colok Ambon.</p>
                 </div>
             </div>
             <div class="gallery-card">
                 <div class="gallery-img-container">
-                    <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=500&q=80" alt="Rendang Daging Sapi">
+                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=80" alt="Ayam Woku Rempah">
                 </div>
                 <div class="gallery-info">
-                    <h4>Rendang Daging Sapi</h4>
-                    <p>Daging empuk dengan kuah santan pekat dan gurih rempah.</p>
+                    <h4>Ayam Woku Rempah Ambon</h4>
+                    <p>Olahan ayam dengan rempah daun kemangi segar, gurih, dan pedas pas.</p>
                 </div>
             </div>
             <div class="gallery-card">
                 <div class="gallery-img-container">
-                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=500&q=80" alt="Gado-Gado">
+                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80" alt="Gado-Gado Spesial">
                 </div>
                 <div class="gallery-info">
-                    <h4>Gado-Gado Spesial</h4>
-                    <p>Sayuran segar dengan saus kacang kental khas Bunda Defika.</p>
+                    <h4>Gado-Gado & Sayur Rempah</h4>
+                    <p>Sayuran segar berkualitas dengan bumbu pilihan racikan khas Bunda Lillah.</p>
                 </div>
             </div>
         </div>
@@ -892,428 +1073,497 @@
             <p>Pilihan Praktis & Lezat untuk Makan Siang, Acara Kantor, & Konsumsi Harian</p>
         </div>
 
-        <div class="menu-grid">
-            <div class="menu-card">
-                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500&q=80" class="menu-img" alt="Nasi Kotak Ayam Bakar Rempah">
-                <div class="menu-body">
-                    <span class="menu-tag">Best Seller</span>
-                    <h3 class="menu-title">Nasi Kotak Ayam Bakar Rempah</h3>
-                    <p class="menu-desc">Nasi wangi, Ayam Bakar Bumbu Rujak, Tahu & Tempe Goreng, Sambal Terasi, Lalapan, Kerupuk.</p>
-                    <div class="menu-footer">
-                        <span class="menu-price">Rp 25.000</span>
-                        <button class="btn-add-cart" onclick="addToCart('Nasi Kotak Ayam Bakar Rempah', 25000)"><i class="fa-solid fa-plus"></i> Tambah</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="menu-card">
-                <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=500&q=80" class="menu-img" alt="Nasi Kotak Rendang Daging">
-                <div class="menu-body">
-                    <span class="menu-tag">Favorit</span>
-                    <h3 class="menu-title">Nasi Kotak Rendang Daging Sapi</h3>
-                    <p class="menu-desc">Nasi Putih, Rendang Daging Sapi Empuk, Sayur Nangka/Daun Singkong, Sambal Hijau, Kerupuk.</p>
-                    <div class="menu-footer">
-                        <span class="menu-price">Rp 30.000</span>
-                        <button class="btn-add-cart" onclick="addToCart('Nasi Kotak Rendang Daging Sapi', 30000)"><i class="fa-solid fa-plus"></i> Tambah</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="menu-card">
-                <img src="https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=500&q=80" class="menu-img" alt="Nasi Kotak Ikan Bakar Ambon">
-                <div class="menu-body">
-                    <span class="menu-tag">Khas Ambon</span>
-                    <h3 class="menu-title">Nasi Kotak Ikan Bakar Colok-Colok</h3>
-                    <p class="menu-desc">Nasi Putih, Ikan Bakar Fresh, Sambal Colok-colok khas Maluku, Tumis Bunga Pepaya, Kerupuk.</p>
-                    <div class="menu-footer">
-                        <span class="menu-price">Rp 28.000</span>
-                        <button class="btn-add-cart" onclick="addToCart('Nasi Kotak Ikan Bakar Colok-Colok', 28000)"><i class="fa-solid fa-plus"></i> Tambah</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="menu-card">
-                <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=500&q=80" class="menu-img" alt="Nasi Kotak Ayam Goreng Lengkuas">
-                <div class="menu-body">
-                    <span class="menu-tag">Gurih</span>
-                    <h3 class="menu-title">Nasi Kotak Ayam Goreng Lengkuas</h3>
-                    <p class="menu-desc">Nasi Putih, Ayam Goreng Kremes Lengkuas, Sambal Bawang, Serundeng, Lalapan, Kerupuk.</p>
-                    <div class="menu-footer">
-                        <span class="menu-price">Rp 23.000</span>
-                        <button class="btn-add-cart" onclick="addToCart('Nasi Kotak Ayam Goreng Lengkuas', 23000)"><i class="fa-solid fa-plus"></i> Tambah</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="menu-card">
-                <img src="https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=500&q=80" class="menu-img" alt="Nasi Kotak Ayam Penyet">
-                <div class="menu-body">
-                    <span class="menu-tag">Pedas Juara</span>
-                    <h3 class="menu-title">Nasi Kotak Ayam Penyet Sambal Ijo</h3>
-                    <p class="menu-desc">Nasi Putih, Ayam Penyet Krispi, Sambal Cabe Hijau Mantap, Tempe Goreng, Lalapan Segar.</p>
-                    <div class="menu-footer">
-                        <span class="menu-price">Rp 24.000</span>
-                        <button class="btn-add-cart" onclick="addToCart('Nasi Kotak Ayam Penyet Sambal Ijo', 24000)"><i class="fa-solid fa-plus"></i> Tambah</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="menu-card">
-                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=500&q=80" class="menu-img" alt="Nasi Kotak Daging Balado">
-                <div class="menu-body">
-                    <span class="menu-tag">Spesial</span>
-                    <h3 class="menu-title">Nasi Kotak Daging Balado Deso</h3>
-                    <p class="menu-desc">Nasi Putih, Irisan Daging Sapi Balado pedas manis, Tumis Buncis Jagung, Kerupuk udang.</p>
-                    <div class="menu-footer">
-                        <span class="menu-price">Rp 32.000</span>
-                        <button class="btn-add-cart" onclick="addToCart('Nasi Kotak Daging Balado Deso', 32000)"><i class="fa-solid fa-plus"></i> Tambah</button>
-                    </div>
-                </div>
-            </div>
+        <div class="menu-grid" id="regularMenuGrid">
+            <!-- Rendered dynamically from JS store -->
         </div>
     </section>
 
     <section class="container" id="custom-menu">
         <div class="custom-menu-card">
-            <h3><i class="fa-solid fa-pen-to-square"></i> Request Custom Menu Reguler</h3>
-            <p>Ingin menu pilihan sendiri? Tuliskan lauk, sayur, dan jumlah porsi sesuai selera Anda!</p>
-            <form id="customMenuForm" onsubmit="submitCustomMenu(event)">
+            <h3><i class="fa-solid fa-sliders"></i> Form Custom Menu Reguler (Nasi Kotak)</h3>
+            <p style="font-size:0.9rem; opacity:0.9;">Buat kombinasi lauk nasi kotak sesuai selera atau budget acara Anda!</p>
+
+            <form onsubmit="handleCustomRegularSubmit(event)">
                 <div class="custom-form-grid">
-                    <input type="text" id="custName" class="input-dark" placeholder="Nama Lengkap" required>
-                    <input type="number" id="custPortion" class="input-dark" placeholder="Jumlah Porsi (Min. 10 Porsi)" required min="10">
-                    <textarea id="custDetails" class="input-dark" placeholder="Tuliskan rincian menu yang Anda inginkan (misal: Nasi Jeruk, Ayam Goreng Lengkuas, Tumis Buncis, Sambal Terasi, Es Teh)..." required></textarea>
+                    <div>
+                        <label style="font-size:0.8rem; font-weight:700; color:var(--gold);">JENIS NASI</label>
+                        <select id="customRegRice" class="input-dark" style="margin-top:4px;">
+                            <option value="Nasi Putih Premium">Nasi Putih Premium</option>
+                            <option value="Nasi Kuning Gurih">Nasi Kuning Gurih</option>
+                            <option value="Nasi Uduk Wangi">Nasi Uduk Wangi</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label style="font-size:0.8rem; font-weight:700; color:var(--gold);">LAUK UTAMA</label>
+                        <select id="customRegMain" class="input-dark" style="margin-top:4px;">
+                            <option value="Ayam Bakar Rempah">Ayam Bakar Rempah</option>
+                            <option value="Ayam Woku Pedas">Ayam Woku Pedas</option>
+                            <option value="Rendang Daging Sapi">Rendang Daging Sapi</option>
+                            <option value="Ikan Asar Colok-Colok">Ikan Asar Colok-Colok</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label style="font-size:0.8rem; font-weight:700; color:var(--gold);">SAYUR & PENDAMPING</label>
+                        <select id="customRegSide" class="input-dark" style="margin-top:4px;">
+                            <option value="Perkedel & Tumis Buncis">Perkedel & Tumis Buncis</option>
+                            <option value="Sambal Goreng Ati & Urap">Sambal Goreng Ati & Urap</option>
+                            <option value="Mie Goreng & Telur Balado">Mie Goreng & Telur Balado</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label style="font-size:0.8rem; font-weight:700; color:var(--gold);">ESTIMASI HARGA PER KOTAK</label>
+                        <input type="number" id="customRegPrice" class="input-dark" value="30000" style="margin-top:4px;" placeholder="Rp 30.000">
+                    </div>
+                    <textarea id="customRegNotes" class="input-dark" placeholder="Catatan khusus (Misal: pedas sedang, kemasan bento, tanpa micin)..."></textarea>
                 </div>
-                <button type="submit" class="btn-gold" style="margin-top: 20px; width: 100%; justify-content: center;"><i class="fa-brands fa-whatsapp"></i> Kirim Request via WhatsApp</button>
+                <button type="submit" class="btn-gold" style="margin-top:20px; width:100%; justify-content:center;">
+                    <i class="fa-solid fa-cart-plus"></i> Tambahkan Custom Nasi Kotak ke Keranjang
+                </button>
             </form>
         </div>
     </section>
 
     <section class="container" id="paketan">
         <div class="section-header">
-            <h2>Paket Tumpeng Spesial</h2>
-            <p>Pilihan Tumpeng Tradisional & Modern untuk Berbagai Momen Berharga Anda</p>
+            <h2>Paketan Tumpeng Tampah</h2>
+            <p>Pilihan Tumpeng Hias Cantik Siap Pesan untuk Syukuran & Ulang Tahun</p>
         </div>
 
-        <div class="menu-grid">
-            <div class="menu-card">
-                <img src="Tumbes.jpg" class="menu-img" alt="Tumpeng Mini">
-                <div class="menu-body">
-                    <span class="menu-tag">Personal</span>
-                    <h3 class="menu-title">Tumpeng Mini Nusantara</h3>
-                    <p class="menu-desc">Nasi Kuning Gurih, Ayam Goreng Lengkuas, Perkedel Kentang, Telur Iris, Sambal Goreng Ati, Serundeng, Lalapan.</p>
-                    <div class="menu-footer">
-                        <span class="menu-price">Rp 35.000</span>
-                        <button class="btn-add-cart" onclick="addToCart('Tumpeng Mini Nusantara', 35000)"><i class="fa-solid fa-plus"></i> Tambah</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="menu-card">
-                <img src="Tumbes.jpg" class="menu-img" alt="Tumpeng Sedang">
-                <div class="menu-body">
-                    <span class="menu-tag">Syukuran (10-15 Porsi)</span>
-                    <h3 class="menu-title">Tumpeng Sedang Syukuran</h3>
-                    <p class="menu-desc">Nasi Kuning Kerucut, Ayam Bakar Rempah, Sambal Goreng Ati Kentang, Perkedel, Telur Balado, Mie Goreng, Sambal & Tampah Hias.</p>
-                    <div class="menu-footer">
-                        <span class="menu-price">Rp 450.000</span>
-                        <button class="btn-add-cart" onclick="addToCart('Tumpeng Sedang Syukuran (10-15 Porsi)', 450000)"><i class="fa-solid fa-plus"></i> Tambah</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="menu-card">
-                <img src="Tumbes.jpg" class="menu-img" alt="Tumpeng Besar Premium">
-                <div class="menu-body">
-                    <span class="menu-tag">Grand Event (20-25 Porsi)</span>
-                    <h3 class="menu-title">Tumpeng Besar Premium</h3>
-                    <p class="menu-desc">Nasi Kuning Lengkap, Rendang Daging Sapi, Ayam Bakar, Udang Goreng Tepung, Sambal Goreng Ati, Perkedel, Telur, Hiasan Janur & Ukiran Sayur.</p>
-                    <div class="menu-footer">
-                        <span class="menu-price">Rp 850.000</span>
-                        <button class="btn-add-cart" onclick="addToCart('Tumpeng Besar Premium (20-25 Porsi)', 850000)"><i class="fa-solid fa-plus"></i> Tambah</button>
-                    </div>
-                </div>
-            </div>
+        <div class="menu-grid" id="tumpengMenuGrid">
+            <!-- Rendered dynamically -->
         </div>
     </section>
 
     <section class="container" id="tumpeng">
         <div class="section-header">
-            <h2>Custom Tumpeng Impian</h2>
-            <p>Rancang Sendiri Porsi, Bentuk, & Kombinasi Lauk Tumpeng Sesuai Keinginan Anda</p>
+            <h2>Custom Tumpeng Tampah Hias</h2>
+            <p>Rancang Ukuran Porsi, Pilihan Nasi, & Kombinasi Lauk Tumpeng Sesuai Momen Anda</p>
         </div>
 
         <div class="tumpeng-custom-box">
             <div class="tumpeng-preview">
-                <img src="Tumbes.jpg" alt="Preview Tumpeng Custom Dapur Bundalillah">
-                <div style="margin-top:20px; text-align:left; background:var(--bg-light); padding:20px; border-radius:12px;">
-                    <h4 style="color:var(--primary-blue); margin-bottom:10px;"><i class="fa-solid fa-star" style="color:var(--gold);"></i> Keunggulan Tumpeng Bunda</h4>
-                    <ul style="list-style:none; font-size:0.9rem; color:var(--text-muted); display:flex; flex-direction:column; gap:8px;">
-                        <li><i class="fa-solid fa-check" style="color:green;"></i> Bahan baku segar & 100% Halal</li>
-                        <li><i class="fa-solid fa-check" style="color:green;"></i> Hiasan ukiran buah & sayur artistik</li>
-                        <li><i class="fa-solid fa-check" style="color:green;"></i> Pengiriman aman langsung ke lokasi acara</li>
-                        <li><i class="fa-solid fa-check" style="color:green;"></i> Bisa request ucapan & tema stiker/papan</li>
-                    </ul>
+                <img src="Tumbes.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=800&q=80';" alt="Tumpeng Custom Preview">
+                <h4 style="margin-top:15px; color:var(--primary-blue); font-weight:700;">Tumpeng Hias Spesial Ambon</h4>
+                <p style="font-size:0.82rem; color:var(--text-muted);">Dihias dengan garnis sayur segar dan diantar tepat waktu ke lokasi Anda.</p>
+            </div>
+
+            <form class="tumpeng-form" onsubmit="handleCustomTumpengSubmit(event)">
+                <div class="form-group">
+                    <label><i class="fa-solid fa-users"></i> UKURAN / PORSI TUMPENG</label>
+                    <select id="tumpengPorsi" onchange="updateTumpengPriceEst()">
+                        <option value="10 Porsi - Rp 350.000" data-price="350000">10 Porsi (Tampah Sedang) - Rp 350.000</option>
+                        <option value="15 Porsi - Rp 500.000" data-price="500000">15 Porsi (Tampah Besar) - Rp 500.000</option>
+                        <option value="20 Porsi - Rp 650.000" data-price="650000">20 Porsi (Tampah Jumbo) - Rp 650.000</option>
+                        <option value="Tumpeng Mini (Rp 35.000/porsi)" data-price="35000">Tumpeng Mini Mika (Rp 35.000 / porsi)</option>
+                    </select>
                 </div>
-            </div>
 
-            <div class="tumpeng-form">
-                <form id="tumpengForm" onsubmit="submitCustomTumpeng(event)">
-                    <div class="form-group">
-                        <label><i class="fa-solid fa-user"></i> Nama pemesan</label>
-                        <input type="text" id="tumpengCustName" placeholder="Nama Anda" required>
+                <div class="form-group">
+                    <label><i class="fa-solid fa-bowl-rice"></i> JENIS NASI TUMPENG</label>
+                    <select id="tumpengNasi">
+                        <option value="Nasi Kuning Gurih Rempah">Nasi Kuning Gurih Rempah</option>
+                        <option value="Nasi Uduk Wangi">Nasi Uduk Wangi</option>
+                        <option value="Nasi Putih Premium">Nasi Putih Premium</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fa-solid fa-utensils"></i> PILIH KOMBINASI LAUK PAUK</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-item"><input type="checkbox" name="tumpengLauk" value="Ayam Lengkuas" checked> Ayam Lengkuas</label>
+                        <label class="checkbox-item"><input type="checkbox" name="tumpengLauk" value="Sambal Goreng Ati" checked> Sambal Ati</label>
+                        <label class="checkbox-item"><input type="checkbox" name="tumpengLauk" value="Telur Balado" checked> Telur Balado</label>
+                        <label class="checkbox-item"><input type="checkbox" name="tumpengLauk" value="Perkedel Kentang" checked> Perkedel</label>
+                        <label class="checkbox-item"><input type="checkbox" name="tumpengLauk" value="Mie Goreng" checked> Mie Goreng</label>
+                        <label class="checkbox-item"><input type="checkbox" name="tumpengLauk" value="Cakalang Suwir"> Cakalang Suwir</label>
+                        <label class="checkbox-item"><input type="checkbox" name="tumpengLauk" value="Urap Sayur"> Urap Sayur</label>
+                        <label class="checkbox-item"><input type="checkbox" name="tumpengLauk" value="Kerupuk / Emping" checked> Kerupuk</label>
                     </div>
+                </div>
 
-                    <div class="form-group">
-                        <label><i class="fa-solid fa-phone"></i> Nomor WhatsApp</label>
-                        <input type="tel" id="tumpengCustPhone" placeholder="0812xxxxxxx" required>
-                    </div>
+                <div class="form-group">
+                    <label><i class="fa-solid fa-pen"></i> TULISAN UCAPAN / CATATAN</label>
+                    <textarea id="tumpengNotes" rows="2" placeholder="Contoh: Tulisan 'Selamat Ulang Tahun Ke-25', Minta tidak terlalu pedas..."></textarea>
+                </div>
 
-                    <div class="form-group">
-                        <label><i class="fa-solid fa-users"></i> Ukuran / Porsi Tumpeng</label>
-                        <select id="tumpengSize" required>
-                            <option value="10 Porsi (Rp 350.000)">10 Porsi (Est. Rp 350.000)</option>
-                            <option value="15 Porsi (Rp 500.000)">15 Porsi (Est. Rp 500.000)</option>
-                            <option value="20 Porsi (Rp 700.000)" selected>20 Porsi (Est. Rp 700.000)</option>
-                            <option value="25 Porsi (Rp 900.000)">25 Porsi (Est. Rp 900.000)</option>
-                            <option value="30+ Porsi (Custom)">30+ Porsi (Request Khusus)</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label><i class="fa-solid fa-bowl-rice"></i> Pilihan Jenis Nasi</label>
-                        <select id="tumpengRice" required>
-                            <option value="Nasi Kuning Gurih Rempah">Nasi Kuning Gurih Rempah</option>
-                            <option value="Nasi Uduk Aromatik">Nasi Uduk Aromatik</option>
-                            <option value="Nasi Liwet khas Sunda/Nusantara">Nasi Liwet khas Rempah</option>
-                            <option value="Nasi Putih Pulen">Nasi Putih Pulen</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label><i class="fa-solid fa-shapes"></i> Bentuk Tumpeng</label>
-                        <select id="tumpengShape" required>
-                            <option value="Kerucut Klasik">Kerucut Klasik</option>
-                            <option value="Bertingkat / Susun">Bertingkat / Susun</option>
-                            <option value="Karakter / Hati">Karakter / Hati</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label><i class="fa-solid fa-drumstick-bite"></i> Pilih Lauk (Bisa Pilih Beberapa)</label>
-                        <div class="checkbox-group">
-                            <label class="checkbox-item"><input type="checkbox" name="tumpengLauk" value="Ayam Bakar Rempah" checked> Ayam Bakar Rempah</label>
-                            <label class="checkbox-item"><input type="checkbox" name="tumpengLauk" value="Rendang Daging Sapi" checked> Rendang Daging Sapi</label>
-                            <label class="checkbox-item"><input type="checkbox" name="tumpengLauk" value="Ayam Goreng Lengkuas"> Ayam Goreng Lengkuas</label>
-                            <label class="checkbox-item"><input type="checkbox" name="tumpengLauk" value="Sambal Goreng Ati Kentang" checked> Sambal Ati Kentang</label>
-                            <label class="checkbox-item"><input type="checkbox" name="tumpengLauk" value="Udang Goreng Tepung"> Udang Goreng Tepung</label>
-                            <label class="checkbox-item"><input type="checkbox" name="tumpengLauk" value="Perkedel Kentang" checked> Perkedel Kentang</label>
-                            <label class="checkbox-item"><input type="checkbox" name="tumpengLauk" value="Telur Balado / Iris" checked> Telur Balado / Iris</label>
-                            <label class="checkbox-item"><input type="checkbox" name="tumpengLauk" value="Mie Goreng Spesial"> Mie Goreng Spesial</label>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label><i class="fa-solid fa-note-sticky"></i> Catatan Khusus & Tanggal Acara</label>
-                        <textarea id="tumpengNotes" rows="3" placeholder="Contoh: Untuk acara ulang tahun tanggal 15 Oktober, kirim jam 10 pagi ke alamat..."></textarea>
-                    </div>
-
-                    <button type="submit" class="btn-gold" style="width:100%; justify-content:center; padding:14px;"><i class="fa-brands fa-whatsapp"></i> Pesan Custom Tumpeng Sekarang</button>
-                </form>
-            </div>
+                <button type="submit" class="btn-gold" style="width:100%; justify-content:center;">
+                    <i class="fa-solid fa-cart-plus"></i> Tambahkan Tumpeng Custom ke Keranjang
+                </button>
+            </form>
         </div>
     </section>
 
     <section class="container" id="prasmanan">
         <div class="section-header">
-            <h2>Prasmanan & Catering Acara</h2>
-            <p>Solusi Hidangan Lezat & Profesional untuk Resepsi, Peresmian, & Gathering Kantor</p>
+            <h2>Paket Buffet Prasmanan</h2>
+            <p>Sajian Lengkap Acara Pernikahan, Seminar, & Syukuran Keluarga di Ambon</p>
         </div>
 
-        <div class="menu-grid">
-            <div class="menu-card">
-                <div class="menu-body" style="padding:30px;">
-                    <span class="menu-tag">Hemat</span>
-                    <h3 class="menu-title" style="font-size:1.4rem;">Paket Prasmanan Bronze</h3>
-                    <p style="color:var(--primary-blue); font-weight:700; font-size:1.3rem; margin-bottom:15px;">Rp 45.000 <span style="font-size:0.85rem; font-weight:normal; color:var(--text-muted);">/ Porsi (Min. 50 porsi)</span></p>
-                    <ul style="color:var(--text-muted); font-size:0.9rem; margin-bottom:25px; line-height:1.8;">
-                        <li>• Nasi Putih Pulen</li>
-                        <li>• Olahan Ayam (Bakar / Goreng Lengkuas)</li>
-                        <li>• Tumisan Sayur Segar / Capcay</li>
-                        <li>• Sup Kimlo / Sup Sayur</li>
-                        <li>• Kerupuk Udang & Sambal</li>
-                        <li>• Buah Potong Segar</li>
-                        <li>• Air Mineral Gelap / Botol</li>
-                    </ul>
-                    <a href="https://wa.me/6281234567890?text=Halo%20Dapur%20Bundalillah,%20saya%20ingin%20tanya%20Paket%20Prasmanan%20Bronze" target="_blank" class="btn-gold" style="justify-content:center; text-decoration:none;"><i class="fa-brands fa-whatsapp"></i> Tanya Paket Bronze</a>
-                </div>
-            </div>
-
-            <div class="menu-card" style="border: 2px solid var(--gold);">
-                <div class="menu-body" style="padding:30px;">
-                    <span class="menu-tag" style="background-color:var(--gold); color:var(--primary-blue);">Terfavorit</span>
-                    <h3 class="menu-title" style="font-size:1.4rem;">Paket Prasmanan Silver</h3>
-                    <p style="color:var(--primary-blue); font-weight:700; font-size:1.3rem; margin-bottom:15px;">Rp 65.000 <span style="font-size:0.85rem; font-weight:normal; color:var(--text-muted);">/ Porsi (Min. 50 porsi)</span></p>
-                    <ul style="color:var(--text-muted); font-size:0.9rem; margin-bottom:25px; line-height:1.8;">
-                        <li>• Nasi Putih & Nasi Goreng Spesial</li>
-                        <li>• Rendang Daging Sapi / Daging Balado</li>
-                        <li>• Ayam Bakar Rempah khas Bunda</li>
-                        <li>• Tumis Bunga Pepaya / Capcay Seafood</li>
-                        <li>• Sup Bakso Sapi / Sup Ayam Sosis</li>
-                        <li>• Kerupuk, Sambal Colok-colok / Terasi</li>
-                        <li>• Pudding & Buah Potong Segar</li>
-                        <li>• Es Teh Manis & Air Mineral</li>
-                    </ul>
-                    <a href="https://wa.me/6281234567890?text=Halo%20Dapur%20Bundalillah,%20saya%20ingin%20tanya%20Paket%20Prasmanan%20Silver" target="_blank" class="btn-gold" style="justify-content:center; text-decoration:none;"><i class="fa-brands fa-whatsapp"></i> Tanya Paket Silver</a>
-                </div>
-            </div>
-
-            <div class="menu-card">
-                <div class="menu-body" style="padding:30px;">
-                    <span class="menu-tag">VIP & Premium</span>
-                    <h3 class="menu-title" style="font-size:1.4rem;">Paket Prasmanan Gold</h3>
-                    <p style="color:var(--primary-blue); font-weight:700; font-size:1.3rem; margin-bottom:15px;">Rp 85.000 <span style="font-size:0.85rem; font-weight:normal; color:var(--text-muted);">/ Porsi (Min. 100 porsi)</span></p>
-                    <ul style="color:var(--text-muted); font-size:0.9rem; margin-bottom:25px; line-height:1.8;">
-                        <li>• Nasi Putih + Nasi Kebuli / Liwet</li>
-                        <li>• Daging Rendang / Sapi Lada Hitam</li>
-                        <li>• Ikan Bakar khas Ambon / Sweet Sour Fish</li>
-                        <li>• Ayam Kremes / Ayam Suwir Bali</li>
-                        <li>• Sup Seafood / Ikan Kuah Kuning</li>
-                        <li>• Dessert Corner (Pudding, Pastry, Buah)</li>
-                        <li>• Soft Drinks, Juice Segar & Coffee Break</li>
-                        <li>• Termasuk Peralatan & Crew Service</li>
-                    </ul>
-                    <a href="https://wa.me/6281234567890?text=Halo%20Dapur%20Bundalillah,%20saya%20ingin%20tanya%20Paket%20Prasmanan%20Gold" target="_blank" class="btn-gold" style="justify-content:center; text-decoration:none;"><i class="fa-brands fa-whatsapp"></i> Tanya Paket Gold</a>
-                </div>
-            </div>
+        <div class="menu-grid" id="prasmananMenuGrid">
+            <!-- Rendered dynamically -->
         </div>
     </section>
 
     <section class="container" id="kontak">
-        <div class="section-header">
-            <h2>Hubungi & Lokasi Kami</h2>
-            <p>Kami Siap Melayani Pesanan & Konsultasi Menu Anda Setiap Hari</p>
-        </div>
-
         <div class="contact-grid">
-            <div class="contact-info-list">
-                <div class="contact-item">
-                    <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
-                    <div class="contact-text">
-                        <h4>Alamat Dapur</h4>
-                        <p>Kota Ambon, Maluku, Indonesia</p>
-                    </div>
-                </div>
+            <div>
+                <h3 style="color:var(--primary-blue); font-size:1.6rem; font-weight:800; margin-bottom:15px;">Pemesanan & Kontak</h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:25px;">
+                    Dapur Bundalillah melayani pengantaran konsumsi tepat waktu ke seluruh sudut Kota Ambon.
+                </p>
 
-                <div class="contact-item">
-                    <div class="contact-icon"><i class="fa-brands fa-whatsapp"></i></div>
-                    <div class="contact-text">
-                        <h4>WhatsApp & Telepon</h4>
-                        <p>+62 812-3456-7890 / +62 821-9988-7766</p>
+                <div class="contact-info-list">
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div class="contact-text">
+                            <h4>Alamat Dapur:</h4>
+                            <p>96C6+WPV, Waiheru, Kec. Baguala, Kota Ambon, Maluku</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="contact-item">
-                    <div class="contact-icon"><i class="fa-solid fa-clock"></i></div>
-                    <div class="contact-text">
-                        <h4>Jam Operasional</h4>
-                        <p>Senin - Minggu: 08.00 - 21.00 WIT</p>
+                    <div class="contact-item">
+                        <div class="contact-icon" style="background-color:#22c55e; color:white;"><i class="fa-brands fa-whatsapp"></i></div>
+                        <div class="contact-text">
+                            <h4>WhatsApp Direct:</h4>
+                            <a href="https://wa.me/6282298661456" target="_blank" style="color:#22c55e; font-weight:700;">
+                                0822-9866-1456 <i class="fa-solid fa-external-link-alt" style="font-size:0.75rem;"></i>
+                            </a>
+                        </div>
                     </div>
-                </div>
 
-                <div class="contact-item">
-                    <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
-                    <div class="contact-text">
-                        <h4>Email & Sosial Media</h4>
-                        <p>dapurbundalillah@gmail.com | @dapurbundalillah_ambon</p>
+                    <div class="contact-item">
+                        <div class="contact-icon" style="background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color:white;"><i class="fa-brands fa-instagram"></i></div>
+                        <div class="contact-text">
+                            <h4>Instagram Official:</h4>
+                            <a href="https://www.instagram.com/bunda.lillah/" target="_blank" style="color:#e1306c; font-weight:700;">
+                                @bunda.lillah <i class="fa-solid fa-external-link-alt" style="font-size:0.75rem;"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div class="contact-text">
+                            <h4>Email Resmi:</h4>
+                            <p>bundadefika@gmail.com</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div style="border-radius:15px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,0.1); background:#e2e8f0; min-height:300px; display:flex; align-items:center; justify-content:center; flex-direction:column; padding:20px; text-align:center;">
-                <i class="fa-solid fa-map-location-dot" style="font-size:3rem; color:var(--primary-blue); margin-bottom:15px;"></i>
-                <h4 style="color:var(--primary-blue); margin-bottom:8px;">Lokasi Dapur Bundalillah Ambon</h4>
-                <p style="color:var(--text-muted); font-size:0.9rem; max-width:300px;">Siap mengantar pesanan ke seluruh wilayah Kota Ambon dan sekitarnya!</p>
-                <a href="https://maps.google.com" target="_blank" class="btn-gold" style="margin-top:20px; text-decoration:none; font-size:0.85rem;"><i class="fa-solid fa-diamond-turn-right"></i> Buka Petunjuk Arah Google Maps</a>
+            <!-- Google Plus Code Box -->
+            <div style="background:var(--dark-blue); color:white; padding:30px; border-radius:16px; border:2px solid var(--gold);">
+                <h4 style="color:var(--gold); font-size:1.2rem; font-weight:700; margin-bottom:10px;">
+                    <i class="fa-solid fa-map-marked-alt"></i> Google Maps Plus Code
+                </h4>
+                <p style="font-size:0.85rem; color:#cbd5e1; margin-bottom:20px;">
+                    Lokasi dapur kami dapat ditemukan dengan mudah di Google Maps:
+                </p>
+                <div style="background:rgba(255,255,255,0.1); padding:12px; border-radius:10px; font-family:monospace; color:var(--gold); font-size:1.1rem; margin-bottom:20px;">
+                    96C6+WPV Waiheru, Ambon
+                </div>
+                <a href="https://www.google.com/maps/search/?api=1&query=96C6%2BWPV,+Waiheru,+Kec.+Baguala,+Kota+Ambon,+Maluku" target="_blank" class="btn-gold" style="width:100%; justify-content:center; text-align:center;">
+                    <i class="fa-solid fa-directions"></i> Buka Rute Google Maps
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- SHOPPING CART MODAL -->
+    <footer>
+        <div class="container" style="padding:0; margin-bottom:15px;">
+            <p style="font-weight:700; color:white; font-size:1.1rem; margin-bottom:5px;">DAPUR BUNDALILLAH</p>
+            <p style="font-size:0.8rem; color:#94a3b8;">Katering & Kuliner khas Ambon - Halal, Higienis, & Berani Rempah</p>
+        </div>
+        <p>&copy; 2026 Dapur Bundalillah. Hak Cipta Dilindungi.</p>
+    </footer>
+
     <div class="cart-modal" id="cartModal">
         <div class="cart-header">
-            <h3><i class="fa-solid fa-cart-shopping"></i> Keranjang Belanja</h3>
+            <h3><i class="fa-solid fa-basket-shopping"></i> Keranjang Pesanan</h3>
             <button class="close-cart" onclick="closeCart()">&times;</button>
         </div>
-        <div class="cart-body" id="cartItemsContainer">
-            <!-- Items injected by JS -->
+        <div class="cart-body" id="cartBody">
+            <!-- Dynamic Cart items -->
         </div>
         <div class="cart-footer">
             <div class="cart-total">
-                <span>Total:</span>
-                <span id="cartTotal">Rp 0</span>
+                <span>Total Estimasi:</span>
+                <span id="cartTotalText">Rp 0</span>
             </div>
+
+            <div style="margin-bottom:15px;">
+                <input type="text" id="custName" placeholder="Nama Pemesan *" class="input-dark" style="background:#fff; color:#000; border:1px solid #cbd5e1; margin-bottom:8px;">
+                <input type="text" id="custAddress" placeholder="Alamat Pengiriman di Ambon *" class="input-dark" style="background:#fff; color:#000; border:1px solid #cbd5e1; margin-bottom:8px;">
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+                    <input type="date" id="custDate" class="input-dark" style="background:#fff; color:#000; border:1px solid #cbd5e1;">
+                    <input type="time" id="custTime" class="input-dark" style="background:#fff; color:#000; border:1px solid #cbd5e1;">
+                </div>
+            </div>
+
             <button class="btn-checkout-wa" onclick="checkoutWhatsApp()">
-                <i class="fa-brands fa-whatsapp" style="font-size:1.3rem;"></i> Order via WhatsApp
+                <i class="fa-brands fa-whatsapp" style="font-size:1.3rem;"></i> Kirim Pesanan via WhatsApp
             </button>
         </div>
     </div>
 
-    <footer>
-        <p>&copy; 2026 Dapur Bundalillah Ambon. Hak Cipta Dilindungi Undang-Undang.</p>
-        <p style="font-size:0.8rem; margin-top:5px; color:#64748b;">Kelezatan Masakan Rumah khas Ambon & Kuliner Nusantara</p>
-    </footer>
+    <div class="modal-box" id="adminModal">
+        <h3 style="color:var(--primary-blue); margin-bottom:15px; font-weight:800;">
+            <i class="fa-solid fa-plus-circle text-gold"></i> Tambah Menu Masakan
+        </h3>
+        <form onsubmit="handleSaveNewMenu(event)">
+            <div style="margin-bottom:10px;">
+                <label style="font-size:0.8rem; font-weight:700; color:var(--primary-blue);">NAMA MENU</label>
+                <input type="text" id="newMenuName" required placeholder="Contoh: Paket Ayam Woku Spesial" class="tumpeng-form" style="width:100%; padding:8px; border:1px solid #cbd5e1; border-radius:6px;">
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:10px;">
+                <div>
+                    <label style="font-size:0.8rem; font-weight:700; color:var(--primary-blue);">KATEGORI</label>
+                    <select id="newMenuCategory" style="width:100%; padding:8px; border:1px solid #cbd5e1; border-radius:6px;">
+                        <option value="reguler">Menu Reguler</option>
+                        <option value="tumpeng">Paketan Tumpeng</option>
+                        <option value="prasmanan">Prasmanan</option>
+                    </select>
+                </div>
+                <div>
+                    <label style="font-size:0.8rem; font-weight:700; color:var(--primary-blue);">HARGA (RP)</label>
+                    <input type="number" id="newMenuPrice" required placeholder="30000" style="width:100%; padding:8px; border:1px solid #cbd5e1; border-radius:6px;">
+                </div>
+            </div>
+            <div style="margin-bottom:10px;">
+                <label style="font-size:0.8rem; font-weight:700; color:var(--primary-blue);">DESKRIPSI</label>
+                <textarea id="newMenuDesc" rows="2" placeholder="Komposisi nasi & lauk pauk..." style="width:100%; padding:8px; border:1px solid #cbd5e1; border-radius:6px;"></textarea>
+            </div>
+            <div style="margin-bottom:15px;">
+                <label style="font-size:0.8rem; font-weight:700; color:var(--primary-blue);">URL FOTO</label>
+                <input type="url" id="newMenuImage" placeholder="https://..." style="width:100%; padding:8px; border:1px solid #cbd5e1; border-radius:6px;">
+            </div>
+            <div style="display:flex; gap:10px; justify-content:flex-end;">
+                <button type="button" onclick="closeAdminModal()" style="padding:8px 16px; border-radius:6px; border:none; background:#cbd5e1; cursor:pointer;">Batal</button>
+                <button type="submit" class="btn-gold" style="border-radius:6px; padding:8px 16px;">Simpan Menu</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Toast Notifications Container -->
+    <div class="toast-container" id="toastContainer"></div>
 
     <script>
-        // Shopping Cart Logic
-        let cart = [];
+        // Default Catalog Items
+        const defaultReguler = [
+            {
+                id: 'r1',
+                name: 'Nasi Kotak Ayam Bakar Rempah',
+                price: 25000,
+                desc: 'Nasi wangi, Ayam Bakar Bumbu Rujak, Tahu & Tempe Goreng, Sambal Terasi, Lalapan, Kerupuk.',
+                tag: 'Best Seller',
+                image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500&q=80'
+            },
+            {
+                id: 'r2',
+                name: 'Nasi Kotak Rendang Daging Sapi',
+                price: 35000,
+                desc: 'Nasi Putih, Rendang Daging Sapi Empuk, Sayur Nangka/Daun Singkong, Sambal Hijau, Kerupuk.',
+                tag: 'Favorit',
+                image: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=500&q=80'
+            },
+            {
+                id: 'r3',
+                name: 'Nasi Kotak Ayam Woku Belanga',
+                price: 30000,
+                desc: 'Nasi Hangat, Ayam Woku Belanga khas Ambon, Perkedel Jagung, Tumis Buncis, Sambal Fresh.',
+                tag: 'Spesial Ambon',
+                image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=500&q=80'
+            },
+            {
+                id: 'r4',
+                name: 'Nasi Kotak Ikan Asar Sambal Colok-Colok',
+                price: 32000,
+                desc: 'Nasi Putih, Cakalang Asar khas Ambon, Siraman Sambal Colok-Colok, Urap Sayur, Kerupuk.',
+                tag: 'Khas Maluku',
+                image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=500&q=80'
+            }
+        ];
 
-        function addToCart(name, price) {
-            const existing = cart.find(item => item.name === name);
+        const defaultTumpeng = [
+            {
+                id: 't1',
+                name: 'Tumpeng Tampah Sedang (10 Porsi)',
+                price: 350000,
+                desc: 'Tumpeng Hias Cantik, Ayam Lengkuas, Sambal Goreng Ati, Telur Balado, Perkedel, Mie Goreng & Kerupuk.',
+                tag: 'Tumpeng 10 Pax',
+                // Using user specified image file with online fallback
+                image: 'Tumbes.jpg'
+            },
+            {
+                id: 't2',
+                name: 'Tumpeng Tampah Jumbo (20 Porsi)',
+                price: 650000,
+                desc: 'Tumpeng Hias Megah 20 Porsi, 7 Macam Lauk Lengkap, Garnis Mewah & Kartu Ucapan.',
+                tag: 'Tumpeng 20 Pax',
+                image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=600&q=80'
+            },
+            {
+                id: 't3',
+                name: 'Tumpeng Mini Mika Acara',
+                price: 35000,
+                desc: 'Tumpeng Mini Porsi Perorangan Kemasan Mika Bening Eksklusif dengan 5 Lauk Pauk.',
+                tag: 'Per Porsi',
+                image: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=600&q=80'
+            }
+        ];
+
+        const defaultPrasmanan = [
+            {
+                id: 'p1',
+                name: 'Paket Buffet Nusantara A (Min 50 Pax)',
+                price: 45000,
+                desc: 'Per pax. Nasi Putih, Ayam Rica-Rica/Bakar, Ikan Asam Manis, Sop Kimlo, Sayur Urap, Es Buah & Puding.',
+                tag: 'Buffet Utama',
+                image: 'https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=600&q=80'
+            },
+            {
+                id: 'p2',
+                name: 'Paket Buffet Seafood khas Ambon (Min 50 Pax)',
+                price: 65000,
+                desc: 'Per pax. Nasi Putih, Ikan Bakar Colok-Colok, Udang Balado, Cumi Tepung, Sayur Tumis & Buah Segar.',
+                tag: 'Buffet Seafood',
+                image: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=600&q=80'
+            }
+        ];
+
+        let cart = [];
+        let menuStore = {
+            reguler: [],
+            tumpeng: [],
+            prasmanan: []
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadMenuStore();
+            renderAllMenus();
+            updateCartUI();
+        });
+
+        function loadMenuStore() {
+            const saved = localStorage.getItem('db_menu_store_v2');
+            if (saved) {
+                try {
+                    menuStore = JSON.parse(saved);
+                } catch(e) {
+                    menuStore = { reguler: defaultReguler, tumpeng: defaultTumpeng, prasmanan: defaultPrasmanan };
+                }
+            } else {
+                menuStore = { reguler: defaultReguler, tumpeng: defaultTumpeng, prasmanan: defaultPrasmanan };
+                saveMenuStore();
+            }
+        }
+
+        function saveMenuStore() {
+            localStorage.setItem('db_menu_store_v2', JSON.stringify(menuStore));
+        }
+
+        function renderAllMenus() {
+            renderSection('regularMenuGrid', menuStore.reguler);
+            renderSection('tumpengMenuGrid', menuStore.tumpeng);
+            renderSection('prasmananMenuGrid', menuStore.prasmanan);
+        }
+
+        function renderSection(containerId, items) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            container.innerHTML = '';
+
+            items.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'menu-card';
+                card.innerHTML = `
+                    <img src="${item.image}" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500&q=80';" class="menu-img" alt="${item.name}">
+                    <div class="menu-body">
+                        <span class="menu-tag">${item.tag || 'Spesial'}</span>
+                        <h3 class="menu-title">${item.name}</h3>
+                        <p class="menu-desc">${item.desc}</p>
+                        <div class="menu-footer">
+                            <span class="menu-price">Rp ${item.price.toLocaleString('id-ID')}</span>
+                            <button class="btn-add-cart" onclick="addToCart('${item.name.replace(/'/g, "\\'")}', ${item.price})">
+                                <i class="fa-solid fa-plus"></i> Tambah
+                            </button>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function addToCart(name, price, desc = '') {
+            const existing = cart.find(c => c.name === name);
             if (existing) {
                 existing.qty += 1;
             } else {
-                cart.push({ name: name, price: price, qty: 1 });
+                cart.push({ name, price, qty: 1, desc });
             }
             updateCartUI();
-            openCart();
+            showToast(`"${name}" ditambahkan ke keranjang.`);
+        }
+
+        function setQty(index, value) {
+            let val = parseInt(value);
+            if (isNaN(val) || val < 1) {
+                cart[index].qty = 1;
+            } else {
+                cart[index].qty = val;
+            }
+            updateCartTotals();
+        }
+
+        function updateCartTotals() {
+            const badge = document.getElementById('cartBadge');
+            const totalText = document.getElementById('cartTotalText');
+
+            let totalCount = 0;
+            let grandTotal = 0;
+
+            cart.forEach(item => {
+                totalCount += item.qty;
+                grandTotal += (item.price * item.qty);
+            });
+
+            if (badge) badge.innerText = totalCount;
+            if (totalText) totalText.innerText = `Rp ${grandTotal.toLocaleString('id-ID')}`;
         }
 
         function updateCartUI() {
-            const container = document.getElementById('cartItemsContainer');
-            const badge = document.getElementById('cartBadge');
-            const totalEl = document.getElementById('cartTotal');
+            const body = document.getElementById('cartBody');
 
-            let totalQty = 0;
-            let totalPrice = 0;
+            body.innerHTML = '';
 
             if (cart.length === 0) {
-                container.innerHTML = '<div style="text-align:center; padding:40px 0; color:var(--text-muted);"><i class="fa-solid fa-basket-shopping" style="font-size:3rem; margin-bottom:10px; color:#cbd5e1;"></i><p>Keranjang belanja masih kosong.</p></div>';
+                body.innerHTML = `
+                    <div style="text-align:center; padding:40px 10px; color:var(--text-muted);">
+                        <i class="fa-solid fa-basket-shopping" style="font-size:3rem; color:#cbd5e1; margin-bottom:10px;"></i>
+                        <p>Keranjang Anda masih kosong.</p>
+                    </div>
+                `;
             } else {
-                let html = '';
                 cart.forEach((item, index) => {
-                    const subtotal = item.price * item.qty;
-                    totalQty += item.qty;
-                    totalPrice += subtotal;
-
-                    html += `
-                        <div class="cart-item">
-                            <div class="cart-item-info">
-                                <h5>${item.name}</h5>
-                                <p>Rp ${item.price.toLocaleString('id-ID')} x ${item.qty} = <strong>Rp ${subtotal.toLocaleString('id-ID')}</strong></p>
-                            </div>
-                            <div class="cart-item-qty">
-                                <button class="btn-qty" onclick="changeQty(${index}, -1)">-</button>
-                                <span style="font-weight:600; font-size:0.9rem;">${item.qty}</span>
-                                <button class="btn-qty" onclick="changeQty(${index}, 1)">+</button>
-                            </div>
+                    const div = document.createElement('div');
+                    div.className = 'cart-item';
+                    div.innerHTML = `
+                        <div class="cart-item-info">
+                            <h5>${item.name}</h5>
+                            <p>${item.price > 0 ? 'Rp ' + item.price.toLocaleString('id-ID') : item.desc}</p>
+                        </div>
+                        <div class="cart-item-qty">
+                            <button class="btn-qty" onclick="changeQty(${index}, -1)">-</button>
+                            <input type="number" min="1" class="cart-qty-input" value="${item.qty}" oninput="setQty(${index}, this.value)" onblur="updateCartUI()">
+                            <button class="btn-qty" onclick="changeQty(${index}, 1)">+</button>
+                            <button class="btn-remove-item" onclick="removeItem(${index})"><i class="fa-solid fa-trash"></i></button>
                         </div>
                     `;
+                    body.appendChild(div);
                 });
-                container.innerHTML = html;
             }
 
-            badge.textContent = totalQty;
-            totalEl.textContent = 'Rp ' + totalPrice.toLocaleString('id-ID');
+            updateCartTotals();
         }
 
         function changeQty(index, delta) {
@@ -1322,6 +1572,87 @@
                 cart.splice(index, 1);
             }
             updateCartUI();
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function handleCustomRegularSubmit(e) {
+            e.preventDefault();
+            const rice = document.getElementById('customRegRice').value;
+            const main = document.getElementById('customRegMain').value;
+            const side = document.getElementById('customRegSide').value;
+            const price = parseInt(document.getElementById('customRegPrice').value) || 30000;
+            const notes = document.getElementById('customRegNotes').value;
+
+            const name = `[CUSTOM NASI KOTAK] ${rice} + ${main}`;
+            const desc = `Side: ${side} | Notes: ${notes || '-'}`;
+
+            addToCart(name, price, desc);
+            showToast('Custom Nasi Kotak berhasil ditambahkan!');
+        }
+
+        function handleCustomTumpengSubmit(e) {
+            e.preventDefault();
+            const porsiSelect = document.getElementById('tumpengPorsi');
+            const porsiText = porsiSelect.value;
+            const price = parseInt(porsiSelect.options[porsiSelect.selectedIndex].getAttribute('data-price')) || 350000;
+            const nasi = document.getElementById('tumpengNasi').value;
+            const notes = document.getElementById('tumpengNotes').value;
+
+            const selectedLauk = [];
+            document.querySelectorAll('input[name="tumpengLauk"]:checked').forEach(cb => {
+                selectedLauk.push(cb.value);
+            });
+
+            const name = `[CUSTOM TUMPENG] ${porsiText}`;
+            const desc = `Nasi: ${nasi} | Lauk: ${selectedLauk.join(', ')} | Ucapan: ${notes || '-'}`;
+
+            addToCart(name, price, desc);
+            showToast('Custom Tumpeng berhasil ditambahkan ke keranjang!');
+        }
+
+        function checkoutWhatsApp() {
+            if (cart.length === 0) {
+                showToast('Keranjang masih kosong!');
+                return;
+            }
+
+            const name = document.getElementById('custName').value;
+            const address = document.getElementById('custAddress').value;
+            const date = document.getElementById('custDate').value;
+            const time = document.getElementById('custTime').value;
+
+            if (!name || !address) {
+                showToast('Mohon isi Nama & Alamat Pengiriman!');
+                return;
+            }
+
+            let msg = `*HALO DAPUR BUNDALILLAH, SAYA INGIN PESAN CATERING*\n\n`;
+            msg += `*Data Pemesan:*\n`;
+            msg += `• Nama: ${name}\n`;
+            msg += `• Alamat: ${address}\n`;
+            msg += `• Jadwal Kirim: ${date || 'Segera'} ${time ? 'Jam ' + time : ''}\n\n`;
+
+            msg += `*Detail Pesanan:*\n`;
+            let total = 0;
+            cart.forEach((item, i) => {
+                const sub = item.price * item.qty;
+                total += sub;
+                msg += `${i + 1}. *${item.name}* (${item.qty}x)\n`;
+                if (item.desc) msg += `   _${item.desc}_\n`;
+                if (item.price > 0) msg += `   Subtotal: Rp ${sub.toLocaleString('id-ID')}\n`;
+            });
+
+            if (total > 0) {
+                msg += `\n*TOTAL ESTIMASI: Rp ${total.toLocaleString('id-ID')}*\n\n`;
+            }
+            msg += `Mohon konfirmasi ketersediaan dan jadwal pengiriman. Terima kasih!`;
+
+            const encoded = encodeURIComponent(msg);
+            window.open(`https://wa.me/6282298661456?text=${encoded}`, '_blank');
         }
 
         function openCart() {
@@ -1334,72 +1665,52 @@
             document.getElementById('overlay').classList.remove('active');
         }
 
-        function checkoutWhatsApp() {
-            if (cart.length === 0) {
-                alert('Keranjang belanja Anda masih kosong!');
-                return;
+        function openAdminModal() {
+            document.getElementById('adminModal').classList.add('active');
+            document.getElementById('overlay').classList.add('active');
+        }
+
+        function closeAdminModal() {
+            document.getElementById('adminModal').classList.remove('active');
+            document.getElementById('overlay').classList.remove('active');
+        }
+
+        function handleSaveNewMenu(e) {
+            e.preventDefault();
+            const name = document.getElementById('newMenuName').value;
+            const category = document.getElementById('newMenuCategory').value;
+            const price = parseInt(document.getElementById('newMenuPrice').value) || 0;
+            const desc = document.getElementById('newMenuDesc').value;
+            const image = document.getElementById('newMenuImage').value || 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500&q=80';
+
+            const newItem = {
+                id: 'custom-' + Date.now(),
+                name,
+                price,
+                desc,
+                tag: 'Baru',
+                image
+            };
+
+            if (menuStore[category]) {
+                menuStore[category].unshift(newItem);
+                saveMenuStore();
+                renderAllMenus();
+                closeAdminModal();
+                showToast('Menu baru telah ditambahkan!');
+                e.target.reset();
             }
-
-            let message = "Halo Dapur Bundalillah, saya ingin memesan:\n\n";
-            let total = 0;
-
-            cart.forEach((item, i) => {
-                const sub = item.price * item.qty;
-                total += sub;
-                message += `${i + 1}. ${item.name} (${item.qty}x) - Rp ${sub.toLocaleString('id-ID')}\n`;
-            });
-
-            message += `\n*Total Pembayaran: Rp ${total.toLocaleString('id-ID')}*\n\nMohon info proses pengiriman dan pembayaran. Terima kasih!`;
-
-            const phone = "6281234567890"; // Ganti dengan nomor WhatsApp Anda
-            const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-            window.open(url, '_blank');
         }
 
-        // Form Submit: Custom Menu Reguler
-        function submitCustomMenu(e) {
-            e.preventDefault();
-            const name = document.getElementById('custName').value;
-            const portion = document.getElementById('custPortion').value;
-            const details = document.getElementById('custDetails').value;
-
-            let msg = `Halo Dapur Bundalillah, saya ingin Request Custom Menu Reguler:\n\n`;
-            msg += `• Nama Pemesan: ${name}\n`;
-            msg += `• Jumlah Porsi: ${portion} Porsi\n`;
-            msg += `• Rincian Menu: ${details}\n\n`;
-            msg += `Mohon info penawaran harga terbaiknya. Terima kasih!`;
-
-            const phone = "6281234567890";
-            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank');
-        }
-
-        // Form Submit: Custom Tumpeng
-        function submitCustomTumpeng(e) {
-            e.preventDefault();
-            const name = document.getElementById('tumpengCustName').value;
-            const phoneVal = document.getElementById('tumpengCustPhone').value;
-            const size = document.getElementById('tumpengSize').value;
-            const rice = document.getElementById('tumpengRice').value;
-            const shape = document.getElementById('tumpengShape').value;
-            const notes = document.getElementById('tumpengNotes').value;
-
-            const selectedLauk = [];
-            document.querySelectorAll('input[name="tumpengLauk"]:checked').forEach(cb => {
-                selectedLauk.push(cb.value);
-            });
-
-            let msg = `Halo Dapur Bundalillah, saya ingin pesan Custom Tumpeng:\n\n`;
-            msg += `• Nama: ${name}\n`;
-            msg += `• No. HP/WA: ${phoneVal}\n`;
-            msg += `• Ukuran/Porsi: ${size}\n`;
-            msg += `• Jenis Nasi: ${rice}\n`;
-            msg += `• Bentuk Tumpeng: ${shape}\n`;
-            msg += `• Lauk Pilihan: ${selectedLauk.join(', ')}\n`;
-            msg += `• Catatan/Tanggal Acara: ${notes || '-'}\n\n`;
-            msg += `Mohon dikonfirmasi ketersediaan pesanan saya. Terima kasih!`;
-
-            const phone = "6281234567890";
-            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank');
+        function showToast(message) {
+            const container = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.innerHTML = `<i class="fa-solid fa-circle-check text-gold"></i> <span>${message}</span>`;
+            container.appendChild(toast);
+            setTimeout(() => {
+                toast.remove();
+            }, 3000);
         }
     </script>
 </body>

@@ -965,6 +965,7 @@
                     <li><a href="#paketan">Tumpeng</a></li>
                     <li><a href="#tumpeng">Custom Tumpeng</a></li>
                     <li><a href="#prasmanan">Prasmanan</a></li>
+                    <li><a href="#es-buah">Es Buah</a></li>
                     <li><a href="#kontak">Kontak</a></li>
                 </ul>
             </nav>
@@ -1029,7 +1030,6 @@
         <div class="gallery-grid" id="galleryContainer">
             <div class="gallery-card">
                 <div class="gallery-img-container">
-                    <!-- Photo 1 specified by user with fallback -->
                     <img src="Tumbes.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=600&q=80';" alt="Tumpeng Premium">
                 </div>
                 <div class="gallery-info">
@@ -1057,11 +1057,56 @@
             </div>
             <div class="gallery-card">
                 <div class="gallery-img-container">
-                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80" alt="Gado-Gado Spesial">
+                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80" alt="Gado-Gado & Sayur Rempah">
                 </div>
                 <div class="gallery-info">
                     <h4>Gado-Gado & Sayur Rempah</h4>
                     <p>Sayuran segar berkualitas dengan bumbu pilihan racikan khas Bunda Lillah.</p>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <div class="gallery-img-container">
+                    <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=600&q=80" alt="Rendang Daging Sapi">
+                </div>
+                <div class="gallery-info">
+                    <h4>Rendang Daging Sapi Khas</h4>
+                    <p>Olahan daging sapi pilihan dengan bumbu santan pekat rempah khas keluarga.</p>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <div class="gallery-img-container">
+                    <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=600&q=80" alt="Cakalang Garam Asar">
+                </div>
+                <div class="gallery-info">
+                    <h4>Cakalang Fufu / Asar Pedas</h4>
+                    <p>Ikan Cakalang asap khas Ambon dipadukan dengan bumbu rica pedas mantap.</p>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <div class="gallery-img-container">
+                    <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=600&q=80" alt="Sop Rempah & Kuah Kuning">
+                </div>
+                <div class="gallery-info">
+                    <h4>Sop Rempah & Kuah Kuning</h4>
+                    <p>Sajian sup segar kaya akan aroma rempah cengkeh dan pala Maluku.</p>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <div class="gallery-img-container">
+                    <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80" alt="Es Buah Segar Dapur Bunda">
+                </div>
+                <div class="gallery-info">
+                    <h4>Es Buah & Es Teler Spesial</h4>
+                    <p>Pencuci mulut manis dan menyegarkan dengan kombinasi buah-buahan asli.</p>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <div class="gallery-img-container">
+                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80" alt="Kue Tradisional & Kudapan">
+                </div>
+                <div class="gallery-info">
+                    <h4>Kudapan & Kue Tradisional</h4>
+                    <p>Pilihan aneka snack box & jajanan pasar pelengkap acara catering Anda.</p>
                 </div>
             </div>
         </div>
@@ -1204,6 +1249,70 @@
         </div>
     </section>
 
+    <section class="container" id="es-buah">
+        <div class="section-header">
+            <h2>Paket Es Buah Baskom & Custom</h2>
+            <p>Sajian Es Buah & Es Teler Segar Paket per Baskom / Toples untuk Acara Syukuran & Pesta</p>
+        </div>
+
+        <!-- Grid Menu Reguler Es Buah -->
+        <div class="menu-grid" id="esBuahMenuGrid" style="margin-bottom: 40px;">
+            <!-- Rendered dynamically -->
+        </div>
+
+        <!-- Form Custom Es Buah -->
+        <div class="custom-menu-card" style="background: linear-gradient(135deg, #0284c7, #0f2c59); border-left-color: #38bdf8;">
+            <h3><i class="fa-solid fa-whiskey-glass"></i> Custom Paket Es Buah Baskom</h3>
+            <p style="font-size:0.9rem; opacity:0.9;">Tentukan pilihan paket baskom, kombinasi kuah, serta isian buah segar sesuai selera acara Anda!</p>
+
+            <form onsubmit="handleCustomEsBuahSubmit(event)">
+                <div class="custom-form-grid">
+                    <div>
+                        <label style="font-size:0.8rem; font-weight:700; color:var(--gold);">PAKET / UKURAN BASKOM</label>
+                        <select id="customEsPorsi" class="input-dark" style="margin-top:4px;">
+                            <option value="Paket 1 Baskom Sedang (10-12 Porsi) - Rp 150.000" data-price="150000">Paket 1 Baskom Sedang (10-12 Porsi) - Rp 150.000</option>
+                            <option value="Paket 1 Baskom Es Teler (10-12 Porsi) - Rp 175.000" data-price="175000">Paket 1 Baskom Es Teler (10-12 Porsi) - Rp 175.000</option>
+                            <option value="Paket 1 Baskom Besar (25 Porsi) - Rp 350.000" data-price="350000">Paket 1 Baskom Besar (25 Porsi) - Rp 350.000</option>
+                            <option value="Paket 1 Baskom Jumbo (50 Porsi) - Rp 650.000" data-price="650000">Paket 1 Baskom Jumbo (50 Porsi) - Rp 650.000</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label style="font-size:0.8rem; font-weight:700; color:var(--gold);">KUAH & RASA UTAMA</label>
+                        <select id="customEsKuah" class="input-dark" style="margin-top:4px;">
+                            <option value="Susu Kental Manis & Sirup Cocopandan">Susu Kental Manis & Sirup Cocopandan</option>
+                            <option value="Kuah Santan Gurih & Gula Merah">Kuah Santan Gurih & Gula Merah (Es Teler)</option>
+                            <option value="Kuah Yakult & Milk Fresh Fruit">Kuah Yakult & Milk Fresh Fruit</option>
+                            <option value="Kuah Sirup Melon Segar">Kuah Sirup Melon Segar</option>
+                        </select>
+                    </div>
+
+                    <div style="grid-column: span 2;">
+                        <label style="font-size:0.8rem; font-weight:700; color:var(--gold); margin-bottom:8px; display:block;">PILIH ISIAN BUAH & TOPPING (Bisa Centang Lebih Dari Satu)</label>
+                        <div class="checkbox-group" style="background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.2); color:white;">
+                            <label class="checkbox-item" style="color:white;"><input type="checkbox" name="esBuahFruit" value="Alpukat Segar" checked> Alpukat Segar</label>
+                            <label class="checkbox-item" style="color:white;"><input type="checkbox" name="esBuahFruit" value="Nangka Manis" checked> Nangka Manis</label>
+                            <label class="checkbox-item" style="color:white;"><input type="checkbox" name="esBuahFruit" value="Kelapa Muda" checked> Kelapa Muda</label>
+                            <label class="checkbox-item" style="color:white;"><input type="checkbox" name="esBuahFruit" value="Melon Merah/Hijau" checked> Melon Segar</label>
+                            <label class="checkbox-item" style="color:white;"><input type="checkbox" name="esBuahFruit" value="Buah Naga" checked> Buah Naga</label>
+                            <label class="checkbox-item" style="color:white;"><input type="checkbox" name="esBuahFruit" value="Anggur & Stroberi"> Anggur & Stroberi</label>
+                            <label class="checkbox-item" style="color:white;"><input type="checkbox" name="esBuahFruit" value="Nata De Coco" checked> Nata De Coco</label>
+                            <label class="checkbox-item" style="color:white;"><input type="checkbox" name="esBuahFruit" value="Cincau Hitam" checked> Cincau Hitam</label>
+                            <label class="checkbox-item" style="color:white;"><input type="checkbox" name="esBuahFruit" value="Biji Selasih" checked> Biji Selasih</label>
+                            <label class="checkbox-item" style="color:white;"><input type="checkbox" name="esBuahFruit" value="Topping Keju Parut"> Keju Parut</label>
+                        </div>
+                    </div>
+
+                    <textarea id="customEsNotes" class="input-dark" placeholder="Catatan tambahan (Contoh: Minta es batu dipisah, manis sedang, atau minta centong sayur tambahan)..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-gold" style="margin-top:20px; width:100%; justify-content:center;">
+                    <i class="fa-solid fa-cart-plus"></i> Tambahkan Custom Paket Es Buah ke Keranjang
+                </button>
+            </form>
+        </div>
+    </section>
+
     <section class="container" id="kontak">
         <div class="contact-grid">
             <div>
@@ -1237,6 +1346,16 @@
                             <h4>Instagram Official:</h4>
                             <a href="https://www.instagram.com/bunda.lillah/" target="_blank" style="color:#e1306c; font-weight:700;">
                                 @bunda.lillah <i class="fa-solid fa-external-link-alt" style="font-size:0.75rem;"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon" style="background-color:#1877f2; color:white;"><i class="fa-brands fa-facebook"></i></div>
+                        <div class="contact-text">
+                            <h4>Facebook Official:</h4>
+                            <a href="https://www.facebook.com/fika.lillah" target="_blank" style="color:#1877f2; font-weight:700;">
+                                Fika Lillah <i class="fa-solid fa-external-link-alt" style="font-size:0.75rem;"></i>
                             </a>
                         </div>
                     </div>
@@ -1322,6 +1441,7 @@
                         <option value="reguler">Menu Reguler</option>
                         <option value="tumpeng">Paketan Tumpeng</option>
                         <option value="prasmanan">Prasmanan</option>
+                        <option value="esbuah">Es Buah</option>
                     </select>
                 </div>
                 <div>
@@ -1391,7 +1511,6 @@
                 price: 350000,
                 desc: 'Tumpeng Hias Cantik, Ayam Lengkuas, Sambal Goreng Ati, Telur Balado, Perkedel, Mie Goreng & Kerupuk.',
                 tag: 'Tumpeng 10 Pax',
-                // Using user specified image file with online fallback
                 image: 'Tumbes.jpg'
             },
             {
@@ -1431,11 +1550,47 @@
             }
         ];
 
+        const defaultEsBuah = [
+            {
+                id: 'e1',
+                name: 'Paket Es Buah 1 Baskom (10-12 Porsi)',
+                price: 150000,
+                desc: '1 Baskom Es Buah Segar Komplet (Alpukat, Nangka, Melon, Kelapa Muda, Nata de Coco & Selasih). Sangat cocok untuk konsumsi acara keluarga/pesta.',
+                tag: 'Paket 1 Baskom',
+                image: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80'
+            },
+            {
+                id: 'e2',
+                name: 'Paket Es Teler 1 Baskom (10-12 Porsi)',
+                price: 175000,
+                desc: '1 Baskom Es Teler Kuah Santan Creamy & Krimer Gurih Manis dengan Isian Melimpah Alpukat Mentega, Nangka, dan Kelapa Muda.',
+                tag: 'Paket 1 Baskom',
+                image: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=600&q=80'
+            },
+            {
+                id: 'e3',
+                name: 'Paket Es Buah Baskom Besar (25 Porsi)',
+                price: 350000,
+                desc: '1 Baskom/Wadah Besar Es Buah Segar Komplet untuk pelengkap hidangan prasmanan acara pernikahan, rapat, atau syukuran.',
+                tag: 'Paket Prasmanan',
+                image: 'https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=600&q=80'
+            },
+            {
+                id: 'e4',
+                name: 'Paket Es Buah Baskom Jumbo (50 Porsi)',
+                price: 650000,
+                desc: 'Paket Porsi Jumbo Es Buah Prasmanan Lengkap dengan centong/sendok es untuk acara besar.',
+                tag: 'Paket Jumbo',
+                image: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80'
+            }
+        ];
+
         let cart = [];
         let menuStore = {
             reguler: [],
             tumpeng: [],
-            prasmanan: []
+            prasmanan: [],
+            esbuah: []
         };
 
         document.addEventListener('DOMContentLoaded', () => {
@@ -1445,27 +1600,32 @@
         });
 
         function loadMenuStore() {
-            const saved = localStorage.getItem('db_menu_store_v2');
+            const saved = localStorage.getItem('db_menu_store_v4');
             if (saved) {
                 try {
                     menuStore = JSON.parse(saved);
                 } catch(e) {
-                    menuStore = { reguler: defaultReguler, tumpeng: defaultTumpeng, prasmanan: defaultPrasmanan };
+                    menuStore = { reguler: defaultReguler, tumpeng: defaultTumpeng, prasmanan: defaultPrasmanan, esbuah: defaultEsBuah };
                 }
             } else {
-                menuStore = { reguler: defaultReguler, tumpeng: defaultTumpeng, prasmanan: defaultPrasmanan };
+                menuStore = { reguler: defaultReguler, tumpeng: defaultTumpeng, prasmanan: defaultPrasmanan, esbuah: defaultEsBuah };
                 saveMenuStore();
             }
         }
 
         function saveMenuStore() {
-            localStorage.setItem('db_menu_store_v2', JSON.stringify(menuStore));
+            localStorage.setItem('db_menu_store_v4', JSON.stringify(menuStore));
+        }
+
+        function saveMenuStore() {
+            localStorage.setItem('db_menu_store_v3', JSON.stringify(menuStore));
         }
 
         function renderAllMenus() {
             renderSection('regularMenuGrid', menuStore.reguler);
             renderSection('tumpengMenuGrid', menuStore.tumpeng);
             renderSection('prasmananMenuGrid', menuStore.prasmanan);
+            renderSection('esBuahMenuGrid', menuStore.esbuah || defaultEsBuah);
         }
 
         function renderSection(containerId, items) {
@@ -1614,6 +1774,26 @@
             showToast('Custom Tumpeng berhasil ditambahkan ke keranjang!');
         }
 
+        function handleCustomEsBuahSubmit(e) {
+            e.preventDefault();
+            const porsiSelect = document.getElementById('customEsPorsi');
+            const porsiText = porsiSelect.value;
+            const price = parseInt(porsiSelect.options[porsiSelect.selectedIndex].getAttribute('data-price')) || 150000;
+            const kuah = document.getElementById('customEsKuah').value;
+            const notes = document.getElementById('customEsNotes').value;
+
+            const selectedFruits = [];
+            document.querySelectorAll('input[name="esBuahFruit"]:checked').forEach(cb => {
+                selectedFruits.push(cb.value);
+            });
+
+            const name = `[CUSTOM ES BUAH] ${porsiText}`;
+            const desc = `Kuah: ${kuah} | Isian: ${selectedFruits.join(', ') || 'Buah Campur'} | Notes: ${notes || '-'}`;
+
+            addToCart(name, price, desc);
+            showToast('Custom Es Buah berhasil ditambahkan!');
+        }
+
         function checkoutWhatsApp() {
             if (cart.length === 0) {
                 showToast('Keranjang masih kosong!');
@@ -1692,14 +1872,15 @@
                 image
             };
 
-            if (menuStore[category]) {
-                menuStore[category].unshift(newItem);
-                saveMenuStore();
-                renderAllMenus();
-                closeAdminModal();
-                showToast('Menu baru telah ditambahkan!');
-                e.target.reset();
+            if (!menuStore[category]) {
+                menuStore[category] = [];
             }
+            menuStore[category].unshift(newItem);
+            saveMenuStore();
+            renderAllMenus();
+            closeAdminModal();
+            showToast('Menu baru telah ditambahkan!');
+            e.target.reset();
         }
 
         function showToast(message) {
